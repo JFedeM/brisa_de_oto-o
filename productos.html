@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Stock Productos|Brisa de Otoño</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <script src="https://kit.fontawesome.com/9ba3dd2de7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="flavicon" href="img/flavicon.ico" />
+    <style>
+        .btn-animate {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .btn-animate:hover {
+            transform: scale(1.1);
+            /* Aumenta el tamaño del botón */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /* Agrega una sombra */
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="sticky">
+        <!-- Coloca la barra de navegación aquí -->
+    </header>
+    <main>
+        <div id="app" class="container">
+            <h2 class="titulo-catalogo">PRODUCTOS</h2>
+            <br>
+            <!-- <a class="btn btn-primary" href="producto-create.html">Nuevo</a> -->
+            <!-- <a class="btn btn-primary btn-animate" href="producto-create.html">Nuevo</a> -->
+            <a class="boton-nuevo" href="producto-create.html">Nuevo</a>
+            <br><br>
+            <div class="table-contenedor">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Iterar sobre cada producto -->
+                        <tr class="" v-for="producto in productos">
+                            <td scope="row">{{producto.id}}</td>
+                            <td>
+                                <img width="150" :src="producto.imagen" :alt="producto.nombre">
+                            </td>
+                            <td>{{producto.nombre}}</td>
+                            <td>{{producto.precio}}</td>
+                            <td>{{producto.stock}}</td>
+                            <td>{{producto.categoria}}</td>
+                            <td>
+                                <!-- Botón para editar el producto -->
+                                <a class="boton-editarProducto"
+                                    :href="'producto-update.html?id='+ producto.id">Editar</a>
+                                <!-- Botón para eliminar el producto -->
+                                <button type="button" class="boton-eliminarProducto"
+                                    v-on:click="eliminar(producto.id)"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Coloca aquí el contenido del pie de página -->
+    </footer>
+    <!-- Enlace de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Enlace de VUE-->
+    <script src="./js/productos.js"></script>
+    <script src="./js/HeaderFooter.js"></script>
+</body>
+
+</html>

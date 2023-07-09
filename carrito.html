@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito|Brisa de Otoño</title>
+    <script src="https://kit.fontawesome.com/9ba3dd2de7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="flavicon" href="Imagenes/flavicon.ico" />
+  </head>
+  <body>
+    <header id="header" class="sticky"></header>
+
+  
+
+    <main id="contenido-principal">
+      <h2 class="titulo-catalogo">CARRITO DE COMPRAS</h2>
+      <div class="contenedor-carrito">
+        <!-- Aparecerá Solo si el carrito está vacío -->
+        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío</p>
+        <!-- Si hay producto en carrito -->
+        <div id="carrito-productos" class="carrito-productos disabled">
+          <!-- Contenedor de cada uno de los producto -->
+        </div>
+        <div id="carrito-acciones" class="carrito-acciones disabled">
+          <div class="carrito-acciones-izquierda">
+            <!-- <button class="carrito-acciones-seguircomprando">
+              <i class="fa-solid fa-turn-down-left"></i>Seguir comprando
+            </button> -->
+            <a class="carrito-acciones-seguircomprando" href="tienda.html""><i class="fa-solid fa-turn-down-left"></i>Seguir comprando</a>
+            <!-- <button class="carrito-acciones-seguircomprando">
+              <i class="fa-solid fa-turn-down-left"></i>Seguir comprando
+            </button> -->
+            <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciarcarrito" >
+              Vaciar Carrito
+            </button>
+          </div>
+          <div class="carrito-acciones-derecha">
+            <div class="carrito-acciones-total">
+              <p>Total:</p>
+              <p id="total">$9.600</p>
+            </div>
+            <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar</button>
+          </div>
+        </div>
+        <!-- Aparecerá Al finalizar la compra -->
+        <p id="carrito-comprado" class="carrito-comprado disabled">
+          MUCHAS GRACIAS POR SU COMPRA
+        </p>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/carrito.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/HeaderFooter.js"></script>
+  </body>
+</html>

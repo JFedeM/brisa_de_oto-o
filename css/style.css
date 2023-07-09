@@ -1,0 +1,675 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Red+Hat+Display:wght@400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Homemade+Apple&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer {
+  display: flex;
+/*   position: absolute; */
+  background-color: rgb(204, 159, 75);
+  font-family: "Red Hat Display", sans-serif;
+  width: 100%; 
+  margin-top:10vh;
+}
+main {
+  flex-grow: 1;
+}
+
+h2,
+h3,
+p,
+a,
+input,
+textarea,
+ul {
+  margin: 0;
+  padding: 0;
+}
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+
+  overflow: hidden;
+  background-color: rgb(204, 159, 75);
+  padding-left: 2rem;
+  /* position: fixed; */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  /* z-index: 99; */
+
+  font-family: "Red Hat Display", sans-serif;
+}
+
+#navbar #logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  float: left;
+}
+
+#navbar #logo img {
+  width: 5rem;
+  height: auto;
+}
+
+#navbar-centrado {
+  display: flex;
+  flex-direction: row;
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: white;
+  font-family: "Homemade Apple", cursive;
+}
+
+#navbar-centrado a {
+  float: left;
+  color: white;
+  padding: 1rem 0.7rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#navbar-centrado a:hover {
+  background-color: rgb(204, 167, 98);
+  font-size: 22px;
+  color: white;
+}
+
+#navbar-derecha {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+#navbar-derecha a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+}
+
+.boton-carrito {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.numerito {
+  background-color: rgb(179, 135, 53);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 860px) {
+  h1 {
+    visibility: hidden;
+  }
+  .boton-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #navbar {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    visibility: hidden;
+  }
+
+  #navbar-centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  #navbar-centrado a {
+    padding: 0.2rem;
+  }
+
+  .boton-carrito a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+#contenido-principal {
+  padding: 15px 40px 40px;
+  font-size: 20px;
+}
+
+h1 {
+  margin-left: 10px;
+
+  color: white;
+  font-family: "Homemade Apple", cursive;
+  font-size: x-large;
+}
+
+
+.portada_catalogo {
+  width: 100%;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.titulo-catalogo {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 4.5rem;
+  letter-spacing: 5px;
+}
+
+.catalogo {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-areas:
+    "item-1 item-1 item-1 item-1"
+    "item-2 item-2 item-3 item-3"
+    "item-4  item-4  item-4 item-4"
+    "item-5 item-5 item-6  item-6";
+
+  gap: 5px;
+}
+
+.item .imagen {
+  border-radius: 10px;
+}
+
+.item-1 {
+  grid-area: item-1;
+}
+
+.item-2 {
+  grid-area: item-2;
+}
+
+.item-3 {
+  grid-area: item-3;
+}
+
+.item-4 {
+  grid-area: item-4;
+}
+
+.item-5 {
+  grid-area: item-5;
+}
+
+.item-6 {
+  grid-area: item-6;
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+h2 {
+  margin-top: 60px;
+  text-align: center;
+
+  color: rgb(204, 159, 75);
+  font-family: "Fraunces", serif;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+@media screen and (max-width: 860px) {
+  .catalogo {
+    grid-template-areas:
+      "item-1 item-1 item-1 item-1"
+      "item-1 item-1 item-1 item-1"
+      "item-2 item-2 item-2 item-2"
+      "item-2 item-2 item-2 item-2"
+      "item-3 item-3  item-3 item-3"
+      "item-4  item-4  item-4 item-4"
+      "item-5 item-5 item-5 item-5"
+      "item-6  item-6 item-6  item-6";
+  }
+  #carrusel {
+    visibility: hidden;
+  }
+}
+
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.elemento-footer {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: -18px;
+  margin-bottom: -18px;
+
+  color: white;
+}
+
+/* ======================================= CSS Carrito ======================================= */
+.contenedor-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  font-family: "Red Hat Display", sans-serif;
+}
+.carrito-vacio,
+.carrito-comprado {
+  color: rgb(204, 159, 75);
+  font-size: 2rem;
+  text-align: center;
+}
+.carrito-productos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.carrito-producto {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 3px 3px 5px gray;
+  background-color: rgba(247, 229, 130, 0.35);
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+  border-radius: 1rem;
+  align-items: center;
+  height: 6rem;
+}
+.carrito-producto-imagen {
+  height: 4rem;
+  border-radius: 1rem;
+}
+.carrito-producto small {
+  font-size: 0.75rem;
+}
+.carrito-producto-eliminar {
+  border: 0;
+  background-color: transparent;
+  color: rgb(67, 64, 64);
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.carrito-acciones {
+  display: flex;
+  justify-content: space-between;
+}
+.carrito-acciones-izquierda {
+  /* display: flex;
+  gap: 1rem; */
+}
+.carrito-acciones-seguircomprando {
+  border: 0;
+  background-color: rgb(204, 159, 75);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.carrito-acciones-vaciarcarrito {
+  border: 0;
+  background-color: rgb(204, 159, 75);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.carrito-acciones-derecha {
+  display: flex;
+}
+.carrito-acciones-total {
+  display: flex;
+  gap: 0.6rem;
+  background-color: rgba(247, 229, 130, 0.35);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.carrito-acciones-comprar {
+  border: 0;
+  background-color: rgb(204, 159, 75);
+  padding: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.disabled {
+  display: none;
+}
+
+/* ======================================= CSS Contacto ======================================= */
+
+.contenedor-contacto {
+  font-family: "Red Hat Display", sans-serif;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contenedor-contacto-izquierda-texto a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+}
+.contact-label {
+  font-weight: bold;
+}
+.inputContacto{
+  width: 90%;
+  background-color: rgb(238, 222, 194);
+  border-color: rgb(204, 167, 98);
+  border-radius: 1rem;
+  padding: 1rem;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+input[type="submit"] {
+  float: right;
+  border: 0;
+  background-color: rgb(204, 167, 98);
+  color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-right: 2.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Red Hat Display", sans-serif;
+}
+.contacto-mapa {
+  width: 100%;
+}
+.contacto-error {
+  text-align: center;
+  color: rgb(116, 44, 44);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* ================================= STOCK PRODUCTOS ================================= */
+.boton-nuevo {
+  border: 0;
+  background-color: rgb(204, 150, 49);
+  color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-right: 2.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 5rem;
+}
+.boton-editarProducto {
+  border: 0;
+  background-color: rgb(197, 154, 73);
+  color: white;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-right: 0.8rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+}
+.boton-eliminarProducto{
+  border: 0;
+  background-color: rgb(121, 47, 18);
+  color: white;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.table-contenedor {
+  margin: 0, 4rem;
+}
+.table {
+  margin-top: 1.5rem;
+  width: 90%;
+}
+th {
+  font-size: 1.2rem;
+  font-weight: bold;
+  align-content: center;
+  height: 2rem;
+  background-color: rgb(204, 167, 98);
+}
+td {
+  background-color: rgb(247, 234, 210);
+  border-collapse: collapse;
+  border-color: rgb(204, 167, 98);
+  text-align: center;
+}
+/* ======================================= CSS CRUD ======================================= */
+.titulo-CRUD {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.contenedor-CRUD {
+  background-color: rgb(247, 234, 210);
+  margin:10px auto ;
+  width: 600px;
+  padding: 20px;
+  border-radius: 1rem;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+form > div {
+  padding: 0.25rem;
+}
+.boton-grabar {
+  border: 0;
+  background-color: rgb(204, 167, 98);
+  color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-right: 2.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Red Hat Display", sans-serif;
+}
+.boton-grabar:hover {
+  border: 2px solid rgb(204, 167, 98);
+  background-color: rgb(247, 234, 210);
+  color: rgb(204, 167, 98);
+}
+.CRUD-input {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 15px;
+}
+.id-CRUD-update {
+  float: center;
+  
+}
+.id-CRUD-updateInput{
+  border: none;
+  background-color: none;
+  font-weight: bold;
+}
+.CRUD-inputFill{
+  width: 100%;
+}
+.row::after {
+  content:"";
+  display: table;
+  clear: both;
+}
+.col-25 {
+  float: left;
+  width: 25%;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+}
+.CRUD-img {
+  position: relative;
+  left:45%;
+
+}
+/* ================================= BREAKPOINTS - CONTACTO ================================= */
+
+@media screen and (max-width: 860px) {
+  .contenedor-contacto-izquierda-texto a {
+    font-size: 1.2rem;
+  }
+
+  .titulo-catalogo {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .contenedor-contacto {
+    flex-direction: column-reverse;
+  }
+
+  .contenedor-contacto-izquierda-texto a {
+    font-size: 1rem;
+  }
+  .titulo-catalogo {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+  }
+}
+
+/* ================================= CSS Como comprar ================================= */
+.contenido-principal-como-comprar {
+  display: flex;
+  flex-direction: column;
+}
+
+.texto-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8rem 0.5rem 8rem;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.texto-info h3 {
+  color: rgb(179, 135, 53);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.texto-info p {
+  font-size: 1.1rem;
+}
+
+.como-comprar {
+  margin-top: 15px;
+}
+
+#carrusel {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+  height: 300px;
+  overflow: hidden;
+  /* background-color: black; */
+  display: block;
+}
+/*Valores de las imagenes*/
+#carrusel img {
+  margin-top: 20px;
+  margin: 0 auto;
+  -moz-transition: opacity 2s;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  width: 450px;
+  height: 300px;
+  position: absolute;
+  /* opacity: 0; */
+  z-index: -1;
+}
+
+/* table {
+  margin: 0 auto;
+  width: 800px;
+  height: auto;
+  overflow: hidden;
+  background-color: white;
+  border: 0;
+} */

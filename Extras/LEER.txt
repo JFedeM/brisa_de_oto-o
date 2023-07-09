@@ -1,0 +1,9 @@
+app_BdO.py
+
+es el archivo que se descargaba del TIF - Tutorial 1 "app.py", modificado para agregar una nueva columna llamada "Categoria"
+
+***********************************************************************
+
+INSERT INTO productos BdO.sql
+
+es el archivo que se descargaba del TIF - Tutorial 1 "INSERT INTO productos.sql", modificado para agregar algunos de los productos de nuestra Web
